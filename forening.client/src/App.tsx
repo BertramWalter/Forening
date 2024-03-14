@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import LandingPage from './Components/LandingPage';
+import { Button } from '@mui/material';
+import Header from './Components/Header';
 
 interface Forecast {
     date: string;
@@ -39,12 +42,26 @@ function App() {
         </table>;
 
     return (
-        <div>
-            <h1 id="tabelLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-            {contents}
-        </div>
+        <>
+            <Header/>
+            <Button color="inherit">Login</Button>
+            <Button color="inherit">Login</Button>
+
+        </>
     );
+
+    
+    // return (
+    //     <>
+    //     <div>
+    //        <button>test</button>
+    //         <h1 id="tabelLabel">Weather forecast</h1>
+    //         <p>This component demonstrates fetching data from the server.</p>
+    //         {contents}
+    //     </div>
+    //     </>
+
+    // );
 
     async function populateWeatherData() {
         const response = await fetch('weatherforecast');
